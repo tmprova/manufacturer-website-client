@@ -1,22 +1,24 @@
-// import { signOut } from 'firebase/auth';
+import { signOut } from "firebase/auth";
 import React from "react";
-// import { useAuthState } from 'react-firebase-hooks/auth';
+import { useAuthState } from "react-firebase-hooks/auth";
+
 import { Link, NavLink } from "react-router-dom";
-// import auth from '../../firebase.init';
-// import Loading from './Loading';
+import auth from "../firebase/firebase.init";
+
+import Loading from "./Loading";
 
 const Navbar = () => {
-  // const [user, loading] = useAuthState(auth)
-  // if (loading) return <Loading></Loading>
+  const [user, loading] = useAuthState(auth);
+  if (loading) return <Loading></Loading>;
 
-  // let userName;
+  let userName;
 
-  // if(user?.displayName){
-  //     userName = user?.displayName?.split(' ')[0]
-  // }
+  if (user?.displayName) {
+    userName = user?.displayName?.split(" ")[0];
+  }
 
-  const user = "omar";
-  const userName = 1;
+  // const user = "omar";
+  // const userName = 1;
   const menuItems = (
     <>
       <li>
@@ -72,9 +74,9 @@ const Navbar = () => {
           <button
             className="btn btn-outline lg:btn-sm lg:mt-2"
             onClick={() => {
-              // signOut(auth)
+              signOut(auth);
               // localStorage.removeItem('accessToken')
-              console.log("tada");
+              // console.log("tada");
             }}
           >
             Sign Out

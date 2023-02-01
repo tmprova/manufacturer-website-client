@@ -10,6 +10,9 @@ import SignUp from "./pages/signup/Signup";
 import RequireAuth from "./hooks/RequireAuth";
 import Dashboard from "./pages/dashboard/Dashboard";
 import RequireAdmin from "./hooks/RequireAdmin";
+import Blogs from "./pages/blogs/Blogs";
+import MyPortfolio from "./pages/myportfolio/MyPortfolio";
+import AllProducts from "./pages/allproducts/AllProducts";
 
 function App() {
   return (
@@ -20,15 +23,15 @@ function App() {
         <Route index element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
-        {/* <Route path="/blogs" element={<Blogs></Blogs>}></Route> */}
-        {/* <Route
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route
           path="/myPortfolio"
           element={<MyPortfolio></MyPortfolio>}
-        ></Route> */}
-        {/* <Route
+        ></Route>
+        <Route
           path="/allproducts"
           element={<AllProducts></AllProducts>}
-        ></Route> */}
+        ></Route>
         {/* <Route
           path="/purchase/:id"
           element={
