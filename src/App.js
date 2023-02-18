@@ -1,18 +1,31 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import NotFound from "./components/Notfound";
-import Home from "./pages/home/Home";
-import Login from "./pages/signup/Login";
-import SignUp from "./pages/signup/Signup";
+import { Footer, Navbar, NotFound } from "./components";
 import RequireAuth from "./hooks/RequireAuth";
-import Dashboard from "./pages/dashboard/Dashboard";
+// import Dashboard from "./pages/dashboard/Dashboard";
 import RequireAdmin from "./hooks/RequireAdmin";
-import Blogs from "./pages/blogs/Blogs";
-import MyPortfolio from "./pages/myportfolio/MyPortfolio";
-import AllProducts from "./pages/allproducts/AllProducts";
+
+import {
+  AllProducts,
+  Blogs,
+  Dashboard,
+  Home,
+  Login,
+  MyPortfolio,
+  SignUp,
+} from "./pages";
+
+import {
+  AddProduct,
+  AddReview,
+  AllUsers,
+  ManageOrders,
+  ManageProducts,
+  MyItems,
+  MyProfile,
+  Payment,
+} from "./pages/dashboard";
 
 function App() {
   return (
@@ -40,7 +53,7 @@ function App() {
             </RequireAuth>
           }
         ></Route> */}
-        {/* <Route
+        <Route
           path="/dashboard"
           element={
             <RequireAuth>
@@ -85,7 +98,7 @@ function App() {
             path="/dashboard/manageProducts"
             element={
               <RequireAdmin>
-                <MaanageProducts></MaanageProducts>
+                <ManageProducts></ManageProducts>
               </RequireAdmin>
             }
           ></Route>
@@ -93,7 +106,7 @@ function App() {
             path="/dashboard/payment/:id"
             element={<Payment></Payment>}
           ></Route>
-        </Route> */}
+        </Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

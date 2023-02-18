@@ -9,7 +9,7 @@ const Products = () => {
 
   useEffect(() => {
     axios
-      .get("https://aurora-car-parts.herokuapp.com/products")
+      .get("http://localhost:5000/api/allitem")
       .then((data) => setProducts(data.data));
   }, []);
 
