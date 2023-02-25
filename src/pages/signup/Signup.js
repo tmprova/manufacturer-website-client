@@ -8,8 +8,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase/firebase.init";
 import Loading from "../../components/Loading";
-
-// import useToken from "../../hooks/useToken";
+import useToken from "../../hooks/useToken";
 
 const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -24,17 +23,17 @@ const SignUp = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-  // const [token] = useToken(user || googleUser);
+  const [token] = useToken(user || googleUser);
 
-  // useEffect(() => {
-  //   if (token) navigate("/");
-  // }, [navigate, token]);
   useEffect(() => {
-    if (user || googleUser) {
-      navigate("/");
-      console.log("username", user?.displayName || googleUser);
-    }
-  }, [user, googleUser, navigate]);
+    if (token) navigate("/");
+  }, [navigate, token]);
+  // useEffect(() => {
+  //   if (user || googleUser) {
+  //     navigate("/");
+  //     console.log("username", user?.displayName || googleUser);
+  //   }
+  // }, [user, googleUser, navigate]);
 
   // if (user || googleUser) {
   //   navigate("/");

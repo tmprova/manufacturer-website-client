@@ -30,7 +30,6 @@ import {
 function App() {
   return (
     <div className="App">
-      {/* <h1 className="text-3xl font-bold underline">hello there</h1> */}
       <Navbar></Navbar>
       <Routes>
         <Route index element={<Home></Home>}></Route>

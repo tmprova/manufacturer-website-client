@@ -75,7 +75,7 @@ const Navbar = () => {
             className="btn btn-outline lg:btn-sm lg:mt-2"
             onClick={() => {
               signOut(auth);
-              // localStorage.removeItem('accessToken')
+              localStorage.removeItem("accessToken");
               // console.log("tada");
             }}
           >
