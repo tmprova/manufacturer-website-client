@@ -71,11 +71,7 @@ function App() {
           ></Route>
           <Route
             path="/dashboard/allUsers"
-            element={
-              <RequireAdmin>
-                <AllUsers></AllUsers>
-              </RequireAdmin>
-            }
+            element={<AllUsers></AllUsers>}
           ></Route>
           <Route
             path="/dashboard/manageOrders"

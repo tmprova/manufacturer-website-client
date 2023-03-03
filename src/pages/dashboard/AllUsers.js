@@ -1,9 +1,45 @@
 import React from "react";
+import { useQuery } from "react-query";
+import axiosPrivate from "../../API/axiosPrivate";
+import Loading from "../../components/Loading";
+import UserRow from "./UserRow";
 
 const AllUsers = () => {
+  const {
+    data: allUsers,
+    isLoading,
+    refetch,
+  } = useQuery("allUsers", () =>
+    axiosPrivate.get("http://localhost:5000/api/allUsers")
+  );
+  if (isLoading) return <Loading></Loading>;
+
   return (
-    <div>
-      <h1>Users</h1>
+    <div className="w-full">
+      <h1 className="text-xl font-semibold text-center"> ALL USERS</h1>
+      <div className="overflow-x-auto w-full mt-2">
+        <table className="table w-full">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Job</th>
+              <th>Email</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {allUsers.data.map((user, index) => (
+              <UserRow
+                key={user._id}
+                user={user}
+                index={index}
+                refetch={refetch}
+              ></UserRow>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

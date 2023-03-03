@@ -9,7 +9,6 @@ import Summary from "./Summary";
 const Home = () => {
   return (
     <div>
-      <h1>home</h1>
       <Banner></Banner>
       <Products></Products>
       <Summary></Summary>
