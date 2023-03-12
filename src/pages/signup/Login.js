@@ -138,7 +138,7 @@ const Login = () => {
             </form>
             <p className="text-center">
               <small>
-                New to Aurora Par Parts? ?{" "}
+                New to IT manufacturing Parts? ?{" "}
                 <span className="text-primary">
                   {" "}
                   <Link to="/signup"> Create New Account</Link>{" "}

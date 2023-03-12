@@ -25,6 +25,10 @@ const SignUp = () => {
   } = useForm();
   const [token] = useToken(user || googleUser);
 
+  if (updating) {
+    <Loading></Loading>;
+  }
+
   useEffect(() => {
     if (token) navigate("/");
   }, [navigate, token]);
