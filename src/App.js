@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 import { Route, Routes } from "react-router-dom";
 import { Footer, Navbar, NotFound } from "./components";
 import RequireAuth from "./hooks/RequireAuth";
@@ -26,6 +27,7 @@ import {
   MyProfile,
   Payment,
 } from "./pages/dashboard";
+import { Slide, ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -105,6 +107,7 @@ function App() {
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer position="top-center" transition={Slide}></ToastContainer>
     </div>
   );
 }
