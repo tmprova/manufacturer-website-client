@@ -14,11 +14,6 @@ const Purchase = () => {
   const [user] = useAuthState(auth);
   const [amountError, setAmountError] = useState("");
 
-  //   useEffect(() => {
-  //     axios
-  //       .get("http://localhost:5000/api/allitem")
-  //       .then((data) => setProduct(data.data));
-  //   }, []);
   useEffect(() => {
     axiosPrivate
       .get(`http://localhost:5000/api/orders/${id}`)
