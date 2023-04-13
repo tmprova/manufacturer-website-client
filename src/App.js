@@ -28,6 +28,7 @@ import {
   Payment,
 } from "./pages/dashboard";
 import { Slide, ToastContainer } from "react-toastify";
+import Purchase from "./pages/home/Purchase";
 
 function App() {
   return (
@@ -46,14 +47,14 @@ function App() {
           path="/allproducts"
           element={<AllProducts></AllProducts>}
         ></Route>
-        {/* <Route
+        <Route
           path="/purchase/:id"
           element={
             <RequireAuth>
               <Purchase></Purchase>
             </RequireAuth>
           }
-        ></Route> */}
+        ></Route>
         <Route
           path="/dashboard"
           element={
