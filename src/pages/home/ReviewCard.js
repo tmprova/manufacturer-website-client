@@ -4,7 +4,7 @@ const ReviewCard = ({ review }) => {
   const { rating, comment, img, name, date, month, year, hours, minutes } =
     review;
 
-  const firstExample = {
+  const reviewCard = {
     size: 30,
     value: rating,
     edit: false,
@@ -17,7 +17,7 @@ const ReviewCard = ({ review }) => {
           {hours}:{minutes} on {date}/{month + 1}/{year}
         </span>
       </p>
-      <ReactStars {...firstExample} />
+      <ReactStars {...reviewCard} />
       <p className="mb-5 text-gray-700">{comment}</p>
       <div className="flex items-center gap-2">
         {img ? (
